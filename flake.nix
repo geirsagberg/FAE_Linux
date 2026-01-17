@@ -9,17 +9,21 @@
   outputs = { self, nixpkgs, flake-utils }: flake-utils.lib.eachDefaultSystem (system:
     let
       pkgs = nixpkgs.legacyPackages.${system};
+      
+      # Use clang on macOS, gcc on Linux
+      stdenv = if pkgs.stdenv.isDarwin then pkgs.clangStdenv else pkgs.stdenv;
 
       # Required build tools
     in
     {
-      packages.default = pkgs.stdenv.mkDerivation {
+      packages.default = stdenv.mkDerivation {
         pname = "FAE_Linux";
         version = "0.1";
 
         src = ./.;
 
-        nativeBuildInputs = with pkgs; [ cmake gcc ];
+        nativeBuildInputs = with pkgs; [ cmake ] ++ 
+          (if stdenv.isDarwin then [ ] else [ gcc ]);
 
 
         buildPhase = ''

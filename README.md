@@ -1,13 +1,14 @@
 # FAE_Linux - Factorio Achievement Enabler for Linux
 
-**FAE_Linux** (Factorio Achievement Enabler for Linux) allows you to unlock Steam achievements while playing the game with mods on Linux.
+**FAE_Linux** (Factorio Achievement Enabler for Linux) allows you to unlock Steam achievements while playing the game with mods on Linux and macOS.
 
 ## Features
 - **Unlock Steam Achievements:** Enables achievement tracking with mods.
 - **Easy to Use:** Simple command-line interface.
+- **Cross-Platform:** Works on Linux and macOS (including Apple Silicon).
 
 ## Usage
-### Universal:
+### Universal (Linux):
 1. **Download:** Get the executable file from the [releases tab](https://github.com/UnlegitSenpaii/FAE_Linux/releases).
 2. **Mark the file as executable:** Apply the executable flag to the downloaded file.
    ```sh
@@ -18,6 +19,18 @@
    ./Downloads/FAE_Linux /path/to/Factorio/bin/x64/factorio
    ```
 *Note: If running the executable does not work, you will have to build the project from source.* 
+
+### macOS (including Apple Silicon):
+1. **Build from source** (see Building from Source section below).
+2. **Run:** Execute it with the Factorio path as a parameter.
+   ```sh
+   ./out/bin/FAE_Linux /path/to/Factorio.app/Contents/MacOS/factorio
+   ```
+   Or if you installed via Steam:
+   ```sh
+   ./out/bin/FAE_Linux ~/Library/Application\ Support/Steam/steamapps/common/Factorio/factorio.app/Contents/MacOS/factorio
+   ```
+*Note: On macOS, you may need to allow the app to run in System Preferences > Security & Privacy if you get a security warning.*
 
 ### Steam Deck:
 1. **Download:** Get the executable file from the [releases tab](https://github.com/UnlegitSenpaii/FAE_Linux/releases).
@@ -34,9 +47,13 @@
 
 
 ### NixOS (not officially supported):
-If you're on NixOS or have Nix installed with Flakes enabled, you can instead use
+If you're on NixOS or have Nix installed with Flakes enabled (works on Linux and macOS), you can instead use
 ```sh
 nix run github:UnlegitSenpaii/FAE_Linux /path/to/Factorio/bin/x64/factorio
+```
+On macOS:
+```sh
+nix run github:UnlegitSenpaii/FAE_Linux /path/to/Factorio.app/Contents/MacOS/factorio
 ```
 
 ## Building from Source
@@ -51,6 +68,11 @@ Follow these steps to build the binary yourself:
     make
     ```
 3. The compiled binary can be found in the /out folder.
+
+### macOS-Specific Build Instructions
+On macOS, the CMake configuration will automatically create a universal binary that works on both Intel and Apple Silicon Macs. You'll need:
+- Xcode Command Line Tools: `xcode-select --install`
+- CMake: Install via Homebrew (`brew install cmake`) or download from cmake.org
 
 ## Contribution Guidelines
 
