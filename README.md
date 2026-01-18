@@ -70,10 +70,10 @@ Follow these steps to build the binary yourself:
 3. The compiled binary can be found in the /out folder.
 
 ### macOS-Specific Build Instructions
-On macOS, the CMake configuration will automatically build for Apple Silicon (arm64). You'll need:
+On macOS, the CMake configuration will automatically build for Apple Silicon (arm64) only. Intel Macs are not supported. You'll need:
 - Xcode Command Line Tools: `xcode-select --install`
 - CMake: Install via Homebrew (`brew install cmake`) or download from cmake.org
-- An Apple Silicon Mac (M1, M2, M3, etc.)
+- An Apple Silicon Mac (M1 or later)
 
 ## Contribution Guidelines
 
