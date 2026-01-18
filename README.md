@@ -1,11 +1,11 @@
 # FAE_Linux - Factorio Achievement Enabler for Linux
 
-**FAE_Linux** (Factorio Achievement Enabler for Linux) allows you to unlock Steam achievements while playing the game with mods on Linux and macOS (Apple Silicon).
+**FAE_Linux** (Factorio Achievement Enabler for Linux) allows you to unlock Steam achievements while playing the game with mods on Linux. macOS build support is available but requires additional pattern configuration.
 
 ## Features
 - **Unlock Steam Achievements:** Enables achievement tracking with mods.
 - **Easy to Use:** Simple command-line interface.
-- **Cross-Platform:** Works on Linux and macOS Apple Silicon.
+- **Cross-Platform Build:** Builds on Linux and macOS Apple Silicon (patterns configured for Linux only).
 
 ## Usage
 ### Universal (Linux):
@@ -21,6 +21,8 @@
 *Note: If running the executable does not work, you will have to build the project from source.* 
 
 ### macOS (Apple Silicon):
+**⚠️ IMPORTANT: While this tool builds on macOS, the byte patterns are currently only configured for Linux binaries. The tool will build and run but pattern matching will fail. macOS-specific patterns need to be discovered using Ghidra before the tool will work on macOS.**
+
 1. **Build from source** (see Building from Source section below).
 2. **Run:** Execute it with the Factorio path as a parameter.
    ```sh
@@ -74,6 +76,8 @@ On macOS, the CMake configuration will automatically build for Apple Silicon (ar
 - Xcode Command Line Tools: `xcode-select --install`
 - CMake: Install via Homebrew (`brew install cmake`) or download from cmake.org
 - An Apple Silicon Mac (M1 or later)
+
+**Note:** The tool will compile successfully but requires macOS-specific byte patterns to be discovered and added to the code before it can patch the macOS Factorio binary. See the [wiki](https://github.com/UnlegitSenpaii/FAE_Linux/wiki/Finding-the-currently-used-patterns-in-ghidra) for guidance on finding patterns.
 
 ## Contribution Guidelines
 
