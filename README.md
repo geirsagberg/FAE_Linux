@@ -1,11 +1,11 @@
 # FAE_Linux - Factorio Achievement Enabler for Linux
 
-**FAE_Linux** (Factorio Achievement Enabler for Linux) allows you to unlock Steam achievements while playing the game with mods on Linux and macOS.
+**FAE_Linux** (Factorio Achievement Enabler for Linux) allows you to unlock Steam achievements while playing the game with mods on Linux and macOS (Apple Silicon).
 
 ## Features
 - **Unlock Steam Achievements:** Enables achievement tracking with mods.
 - **Easy to Use:** Simple command-line interface.
-- **Cross-Platform:** Works on Linux and macOS (including Apple Silicon).
+- **Cross-Platform:** Works on Linux and macOS Apple Silicon.
 
 ## Usage
 ### Universal (Linux):
@@ -20,7 +20,7 @@
    ```
 *Note: If running the executable does not work, you will have to build the project from source.* 
 
-### macOS (including Apple Silicon):
+### macOS (Apple Silicon):
 1. **Build from source** (see Building from Source section below).
 2. **Run:** Execute it with the Factorio path as a parameter.
    ```sh
@@ -47,11 +47,11 @@
 
 
 ### NixOS (not officially supported):
-If you're on NixOS or have Nix installed with Flakes enabled (works on Linux and macOS), you can instead use
+If you're on NixOS or have Nix installed with Flakes enabled (works on Linux and macOS Apple Silicon), you can instead use
 ```sh
 nix run github:UnlegitSenpaii/FAE_Linux /path/to/Factorio/bin/x64/factorio
 ```
-On macOS:
+On macOS Apple Silicon:
 ```sh
 nix run github:UnlegitSenpaii/FAE_Linux /path/to/Factorio.app/Contents/MacOS/factorio
 ```
@@ -70,9 +70,10 @@ Follow these steps to build the binary yourself:
 3. The compiled binary can be found in the /out folder.
 
 ### macOS-Specific Build Instructions
-On macOS, the CMake configuration will automatically create a universal binary that works on both Intel and Apple Silicon Macs. You'll need:
+On macOS, the CMake configuration will automatically build for Apple Silicon (arm64). You'll need:
 - Xcode Command Line Tools: `xcode-select --install`
 - CMake: Install via Homebrew (`brew install cmake`) or download from cmake.org
+- An Apple Silicon Mac (M1, M2, M3, etc.)
 
 ## Contribution Guidelines
 

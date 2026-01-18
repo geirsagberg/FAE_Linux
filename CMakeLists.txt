@@ -15,8 +15,8 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
 
 # macOS specific settings
 if(APPLE)
-  # Support both x86_64 and arm64 (Apple Silicon)
-  set(CMAKE_OSX_ARCHITECTURES "x86_64;arm64" CACHE STRING "Build architectures for macOS")
+  # Support Apple Silicon only
+  set(CMAKE_OSX_ARCHITECTURES "arm64" CACHE STRING "Build architecture for macOS")
 endif()
 
 include_directories(src/helpers)
