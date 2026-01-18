@@ -1,11 +1,11 @@
 # FAE_Linux - Factorio Achievement Enabler for Linux
 
-**FAE_Linux** (Factorio Achievement Enabler for Linux) allows you to unlock Steam achievements while playing the game with mods on Linux. macOS build support is available but requires additional pattern configuration.
+**FAE_Linux** (Factorio Achievement Enabler for Linux) allows you to unlock Steam achievements while playing the game with mods on Linux. macOS build support is available but the tool will not function without macOS-specific byte patterns.
 
 ## Features
 - **Unlock Steam Achievements:** Enables achievement tracking with mods.
 - **Easy to Use:** Simple command-line interface.
-- **Cross-Platform Build:** Builds on Linux and macOS Apple Silicon (patterns configured for Linux only).
+- **Cross-Platform Build:** Compiles on Linux and macOS Apple Silicon (functional on Linux only, macOS requires pattern discovery).
 
 ## Usage
 ### Universal (Linux):
